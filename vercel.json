@@ -1,6 +1,6 @@
 {
     "functions": {
-        "pages/api/**/*": {
+        "src/pages/api/**/*": {
             "memory": 3008
         }
     }
