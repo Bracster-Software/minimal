@@ -22,7 +22,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
       if (!pageToken && deleteFolder) {
         console.log('Clean folder unused', deleteFolder);
-        await cleanFolder(userId, deleteFolder);
+        // await cleanFolder(userId, deleteFolder);
       }
     } else {
       if (count < 100) {

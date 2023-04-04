@@ -14,7 +14,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     // all files combined
     if (index === 0 && filePaginate.files.length === 1 && !filePaginate.pageToken) {
       await copyFile(userId, `${oldFolder}/${index}.mbox`, `${email}--at--${oldFolder}.mbox`);
-      await cleanFolder(userId, oldFolder);
+      // await cleanFolder(userId, oldFolder);
       const { data: user, error } = await supabaseAdmin.from('workspace_users').select().eq('id', userId).single();
       if (error) throw error;
       if (user) {

@@ -176,6 +176,7 @@ export async function composeFilesInBucket(bucketName: string, files: File[], fi
     const storage = createStorage();
     const bucket = storage.bucket(bucketName);
     const sources = files.sort();
+    console.log("Combine files", sources.map(f => f.name))
     const resultFile = bucket.file(fileName);
     bucket.combine(sources, resultFile).then(function (data) {
       console.log('Combined file successed');

@@ -42,6 +42,7 @@ export async function saveMailsToGCloudStorage(
     nextPageToken = messageList.data.nextPageToken;
   } catch (error) {
     await cleanFolder(userId, folder);
+    throw error;
   }
 
   if (parsedEmails.length > 0) {
