@@ -1,7 +1,18 @@
 {
     "functions": {
         "src/pages/api/**/*": {
-            "memory": 3008
+            "memory": 1024
         }
-    }
+    },
+    "headers": [
+        {
+          "source": "src/pages/api/**/*",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "s-maxage=1"
+            }
+          ]
+        }
+      ]
 }
