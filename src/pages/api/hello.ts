@@ -14,13 +14,17 @@ export default async function handler(
   res: NextApiResponse<Data>
 ) {
   const response = await fetch('https://jsonplaceholder.typicode.com/photos', { method: "Get" });
-  console.log('response',(response.json() as any).length)
+  console.log('response', typeof (response.json()))
   console.log(
-    'Memory used before:',
+    'Memory used before 1:',
+    map(process.memoryUsage(), (value, key) => `${key}: ${Math.round((value / 1024 / 1024) * 100) / 100} MB`)
+  );
+  console.log(
+    'Memory used before 2:',
     map(process.memoryUsage(), (value, key) => `${key}: ${Math.round((value / 1024 / 1024) * 100) / 100} MB`)
   );
     try {
-    setFlagsFromString('--expose_gc');
+    setFlagsFromString('--expose-gc');
     const gc = runInNewContext('gc'); // nocommit
     gc();
   } catch (e) {
