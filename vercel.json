@@ -1,7 +1,16 @@
 {
   "rewrites": [
-    {"source": "/api/:match*", "destination": "https://backup-workspace-emails-backend.vercel.app/api/:match*"},
-    {"source": "/", "destination": "https://backup-workspace-emails.vercel.app/"},
-    {"source": "/:match*", "destination": "https://backup-workspace-emails.vercel.app/:match*"}
+    {
+      "source": "/api/:match*",
+      "destination": "https://backup-workspace-emails-backend-git-staging-bracster-software.vercel.app/api/:match*"
+    },
+    {
+      "source": "/",
+      "destination": "https://backup-workspace-emails-frontend-git-staging-bracster-software.vercel.app/"
+    },
+    {
+      "source": "/:match*",
+      "destination": "https://backup-workspace-emails-frontend-git-staging-bracster-software.vercel.app/:match*"
+    }
   ]
 }
