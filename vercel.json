@@ -1,6 +1,7 @@
 {
   "rewrites": [
     {"source": "/api/:match*", "destination": "https://backup-workspace-emails-backend.vercel.app/api/:match*"},
-    {"source": "/*", "destination": "https://backup-workspace-emails.vercel.app/*"}
+    {"source": "/", "destination": "https://backup-workspace-emails.vercel.app/"},
+    {"source": "/:match*", "destination": "https://backup-workspace-emails.vercel.app/:match*"}
   ]
 }
